@@ -11,22 +11,22 @@
         margin: 0;
         padding: 0;
       }
-      .navbar-fixed {
+      .header{
         z-index: 1000;
         position: fixed;
         width: 100%;
-        background-color:white;
+        background-color:whitesmoke;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 20px 10%;
+        padding: 20px 100px;
       }
 
       .image-section {
             position: relative;
             text-align: center;
             height:750px;
-            background-image: url('D:/frontend/Task/ecommerce/img/main.png.jpg');
+            background-image: url('D:/frontend/Ecommerce website/img/main.png.jpg');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -44,11 +44,11 @@
     </style>
   </head>
   <body>
-     <div class="navbar-fixed">
-      <h1>Ecommerce</h1>
+     <div class="header">
+      <h1><a href="home.html"style="text-decoration: none; color: gray;">Ecommerce</a></h1>
       <ul class="d-flex p-3 gap-5 list-unstyled">
         <li><a href="home.html" style="text-decoration: none; color: gray;">Home</a></li>
-        <li>Products</li>
+        <li><a href="product.html" style="text-decoration: none; color: gray;" >Products</a></li>
         <li><a href="About.html" style="text-decoration: none; color: gray;">About</a></li>
         <li><a href="contact.html" style="text-decoration: none; color: gray;">Contact</a></li>
       </ul>
@@ -79,14 +79,14 @@
     </div>
 
     <div class="product text-dark">
-      <h2 style="text-align: center;padding: 20px;">Latest Products</h2><hr>
-      <ul class="d-flex align-items-center justify-content-center gap-5 list-unstyled p-5">
-        <li class="border border-dark">All</li>
-        <li class="border border-dark">Men's Clothing</li>
-        <li class="border border-dark">Women's Clothing</li>
-        <li class="border border-dark">Jewelery</li>
-        <li class="border border-dark">Electronics</li>
-      </ul>
+      <h1 style="text-align: center;padding: 10px;margin-top: 100px;">Latest Products</h1><hr>
+      <div class="d-flex align-items-center justify-content-center gap-5 list-unstyled p-4">
+        <button class="border border-dark p-1">All</button>
+        <button class="border border-dark p-1">Men's Clothing</button>
+        <button class="border border-dark p-1">Women's Clothing</button>
+        <button class="border border-dark p-1">Jewelery</button>
+        <button class="border border-dark p-1">Electronics</button>
+      </div>
     </div>
     <div class ="row  justify-content-center" id="imgs">
 
@@ -104,13 +104,13 @@
         list+=`
         <div class="col-md-4 p-2 text-center">
             <div class="card h-150 shadow-sm">
-              <img src="${product.image}" alt="product image" style="width:400px;height:300px">
+              <img src="${product.image}" alt="product image" style="margin:30px;height:300px">
               <div class="cards">
                 <p style="font-weight:bold">${product.title.length>10?product.title.substring(0,11).concat("..."):product.title}</p>
                 <p>${product.description.length>20?product.description.substring(0,90).concat("..."):product.description}</p><hr>
                 <p style="text-align:center">$${product.price}</p><hr>
               </div>
-              <div class="btn p-2">
+              <div class="btn p-2" style="border:none">
                 <button style="background-color:black;color:white">Details</button>
                 <button style="background-color:black;color:white">Add to Cart</button>
                </div>

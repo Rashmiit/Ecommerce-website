@@ -1,0 +1,89 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.header{
+    z-index: 1000;
+    position: fixed;
+    width: 100%;
+    background-color:whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 100px;
+}
+.image-section {
+    position: relative;
+    text-align: center;
+    height:750px;
+    background-image: url('D:/frontend/Ecommerce website/img/main.png.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:left;
+    color: white;
+}
+.card-text {
+    max-width: 1000px;
+    text-align: left;
+    padding: 40px;
+}
+a{
+    text-decoration: none; 
+    color: gray;
+}
+ul{
+    display: flex;
+    gap: 45px;
+    text-decoration: none;
+}
+.btn{
+    border: none;
+}
+.heading{
+    text-align: center;
+    padding: 10px;
+    margin-top: 50px;
+}
+.footer{
+    text-align: center ;
+    color: black;
+}
+.footer i{
+    color: red;
+}
+.footer span{
+    text-decoration: underline; 
+    font-weight:bold;
+}
+.bnt{
+    border:none;
+    padding:10px;
+    margin-bottom:10px;
+}
+.cards {  
+    border-radius:8px;
+}
+.bnt1 button{
+    background-color:black;
+    border-radius:8px;
+    color:white;
+}
+.heading h2{
+    text-align: center;
+    padding: 10px;
+    margin-top:30px;
+}
+.about p{
+    text-align: center;
+    align-items: center;
+}
+.about h1{
+    text-align: center;
+}
+.card{
+    margin: 20px;
+    border-radius: 10px;
+}

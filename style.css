@@ -91,3 +91,9 @@ form{
     width: 350px;
     padding: 10px;
 }
+.imge{
+    width: 450px;
+}
+.container h1{
+    text-transform:uppercase;
+}

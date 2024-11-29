@@ -10,7 +10,7 @@
   </head>
   <body>
      <div class="header">
-      <h1><a href="home.html">Ecommerce</a></h1>
+      <h1><a href="home.html" style="color: black;">Ecommerce</a></h1>
       <ul class="nav">
         <li><a href="home.html">Home</a></li>
         <li><a href="product.html">Products</a></li>
@@ -68,7 +68,6 @@
     .then(res=>res.json())
     .then(data=>{
       products=data
-      console.log(data)
       displayProducts(products)
     })
   }
@@ -90,8 +89,8 @@
               <div class="bnt p-3">
                 <div class=bnt1>
                 <a href='product-detail.html?id=${product.id}'>Details</a>
-                <button onclick="addToCart(${product.id})">Add to Cart</button>
-               </div>
+                <a href='cart.html?id=${product.id}'>Add to Cart</a>
+                </div>
                </div>
               </div>`
             container.appendChild(card);

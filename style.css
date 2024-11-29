@@ -66,10 +66,11 @@ ul{
 .cards {  
     border-radius:8px;
 }
-.bnt1 button{
-    background-color:black;
-    border-radius:8px;
-    color:white;
+.bnt1 a {
+    background-color: black;
+    border-radius: 8px;
+    color: white;
+    padding: 10px;
 }
 .heading h2{
     text-align: center;
@@ -92,8 +93,24 @@ form{
     padding: 10px;
 }
 .imge{
-    width: 450px;
+    width: 400px;
 }
 .container h1{
     text-transform:uppercase;
+}
+.product h2,h3{
+    font-weight:lighter;    
+}
+.product{
+    padding:50px;
+}
+.slider h1{
+    padding:40px;
+}
+.reg p{
+    font-weight: bolder;
+}
+.reg span{
+    text-decoration: underline;
+    color:blue;
 }

@@ -57,11 +57,9 @@
     </div>
     <div class ="row p-4 justify-content-center" id="imgs">
     </div>
-
     <script>
         const params = new URLSearchParams(window.location.search);
         const productId = params.get('id');
-
         fetch(`https://fakestoreapi.com/products/${productId}`)
             .then(response => response.json())
             .then(product => {
@@ -72,8 +70,6 @@
                 document.getElementById('productPrice').innerText = `$${product.price}`
                 document.getElementById('productDescription').innerText = product.description;
             })
-
-
             let products=[];
 
     //fetch product
@@ -110,8 +106,6 @@
             container.appendChild(card);
       })
     }
-
-
    //filter function
     function filterProducts(category) {
         if (category === "all") {
@@ -125,4 +119,4 @@
            
     </script>
 </body>
-</html> 
+</html>  

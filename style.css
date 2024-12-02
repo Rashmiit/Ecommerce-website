@@ -30,9 +30,19 @@ body{
     text-align: left;
     padding: 40px;
 }
+.header h1 a{
+    color: black;
+}
+.nav a:hover{
+    color: black;
+}
 a{
     text-decoration: none; 
     color: gray;
+}
+.btn a :hover{
+    background-color: black;
+    color: white;
 }
 ul{
     display: flex;
@@ -113,4 +123,23 @@ form{
 .reg span{
     text-decoration: underline;
     color:blue;
+}
+.product h2{
+    font-weight: bold;
+    font-size: 20px;
+    padding-right: 10px;
+}
+.order{
+    padding: 10px;
+}
+.order button{
+    background-color: black;
+    color: white;
+    width: 450px;
+    justify-content: center;
+    text-align: center;
+}
+.order p{
+    display: flex;
+    justify-content: space-between;
 }

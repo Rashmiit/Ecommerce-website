@@ -91,9 +91,10 @@
 
             if (cart.length === 0) {
                 emptyMessageContainer.innerHTML = `
-                    <h1 class="text-center fs-4">Your Cart is Empty</h1>
+                
+                    <h1 class="text-center fs-4"style="font-weight:lighter;font-size:larger">Your Cart is Empty</h1><br>
                     <div class="text-center">
-                        <button onclick="window.location.href='product.html'">Continue Shopping</button>
+                        <button  onclick="window.location.href='product.html'"><i class="fa fa-arrow-left" aria-hidden="true"></i>Continue Shopping</button>
                     </div>`;
                 itemListCard.style.display = 'none';
                 orderSummaryCard.style.display = 'none';

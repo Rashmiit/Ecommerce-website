@@ -129,9 +129,11 @@ form{
     font-size: 20px;
     padding-right: 10px;
 }
-.order{
-    padding: 10px;
+.cart1{
+    height: 300px; 
+    background-color: gray;
 }
+
 .order button{
     background-color: black;
     color: white;
@@ -139,7 +141,38 @@ form{
     justify-content: center;
     text-align: center;
 }
-.order p{
+.order {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+
+}
+.order p, .order h2{
     display: flex;
     justify-content: space-between;
 }
+.order .sp1, .order .sp2, .order .sp4 {
+    margin-left: auto;  
+}
+#cards{
+    width: 53rem;
+    bottom:450px; 
+    display: none;
+}
+#order-summary{
+    width: 30rem; 
+    bottom: 340px;
+    margin-left:10px; 
+    left: 1000px; 
+    position: absolute; 
+    display: none;
+}
+
+
+
+
+
+
+
+

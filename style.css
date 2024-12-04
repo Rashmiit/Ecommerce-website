@@ -76,12 +76,22 @@ ul{
 .cards {  
     border-radius:8px;
 }
-.bnt1 a {
+.bnt1{
+    display: flex;
+    justify-content: center;
+}
+.bnt1 a,.bnt1 button{
     background-color: black;
     border-radius: 8px;
     color: white;
     padding: 10px;
+    margin-right: 10px;
 }
+.border:hover{
+    background-color: black;
+    color: white;
+}
+
 .heading h2{
     text-align: center;
     padding: 10px;

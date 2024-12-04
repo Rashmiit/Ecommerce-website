@@ -29,8 +29,8 @@
         </button>
         </a>
         <a href="cart.html">
-        <button type="button" class="btn btn-light border border-dark">
-          <i class="fa-solid fa-cart-shopping"></i> Cart (0)
+        <button type="button" class="cart btn btn-light border border-dark">
+          <i class="fa-solid fa-cart-shopping"></i><span id="cartCount"> Cart (0)</span>
         </button>
         </a>
       </div>
@@ -125,7 +125,7 @@
       function updateCartCount() {
         const cart = JSON.parse(localStorage.getItem('cart')) || [];
         const cartCount = cart.reduce((total, product) => total + product.quantity, 0);
-        document.getElementById('cartBtn').textContent = `Cart (${cartCount})`;
+        document.getElementById('cartCount').textContent = `Cart (${cartCount})`;
       }
 
       window.onload = () => {

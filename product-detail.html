@@ -47,16 +47,23 @@
                 <p id="productRating" style="display:inline-block;"></p> <i class="fa fa-star"></i>
                 <h3 id="productPrice"></h3>
                 <p id="productDescription"></p>
-                <button id="cartLink" style="border-radius: 10px;padding: 5px;">Add to Cart</button>
-                <button style="background-color: black;border-radius: 10px;padding: 5px;"><a href='cart.html'>Go to cart</a></button>
+                <button class="addLink" id="cartLink">Add to Cart</button>
+                <button class="goCart"><a href='cart.html' style="color: white;">Go to cart</a></button>
             </div>
         </div>
     </div>
     <div class="slider">
         <h1>You may also Like</h1>
+        <div class="slider1" id="imgs">
+
+        </div>
     </div>
     <div class ="row p-4 justify-content-center" id="imgs">
+      <div class="col-sm-6 col-md-4 col-lg-3"></div>
     </div>
+    <div class="footer col-5 mx-auto text-center">
+      <p>Made with <i class="fa-solid fa-heart"></i> by <span>Rashmi</span> </p>
+  </div>
     <script>
         const params = new URLSearchParams(window.location.search);
         const productId = params.get('id');
@@ -90,35 +97,24 @@
       container.innerHTML=""        //clears any existing container
       productList.forEach(product => {
         const card = document.createElement("div");
-        card.className ="col-md-4 p-2 text-center";
+        card.className ="slider-item";
         card.innerHTML=`
-            <div class="card h-150">
-              <img src="${product.image}" alt="product image" style="margin:30px;height:300px">
-              <div class="cards">
+              <img src="${product.image}" alt="product image"> 
                 <p style="font-weight:bold">${product.title.length>10?product.title.substring(0,11).concat("..."):product.title}</p>
                 <p style="text-align:center">${product.description.length>20?product.description.substring(0,90).concat("..."):product.description}</p><hr>
                 <p style="text-align:center">$${product.price}</p><hr>
-              </div>
+              
               <div class="bnt p-3">
                 <div class=bnt1>
                 <a href='product-detail.html?id=${product.id}'>Details</a>
                 <a href='cart.html?id=${product.id}'>Add to Cart</a>
                </div>
-               </div>
+               
               </div>`
             container.appendChild(card);
       })
     }
-   //filter function
-    function filterProducts(category) {
-        if (category === "all") {
-          displayProducts(products);
-        } else {
-          const filtered = products.filter(product => product.category === category);
-          displayProducts(filtered);
-        }
-      }
-
+ 
       function addToCart(productId) {
         const product = products.find(p => p.id === productId);
         let cart = JSON.parse(localStorage.getItem('cart')) || [];

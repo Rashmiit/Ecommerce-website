@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <!-- Header Section -->
     <div class="header">
         <h1><a href="home.html">Ecommerce</a></h1>
         <ul class="nav">
@@ -36,16 +35,16 @@
             </a>
           </div>
     </div><br><br>
-    <div class="cart-title text-center" style="padding-top: 150px;">
-        <h1 id="cart-title" class="text-center">Cart</h1>
+    <div class="cart-title text-center" style="padding-top: 70px;">
+        <h1 id="cart-title" class="text-center">Cart</h1><hr>
       </div>
   
       <div class="cart1">
-        <div id="empty-cart-message" class="text-center" style="padding: 100px;"></div>
+        <div id="empty-cart-message" class="text-center" style="padding: 100px; "></div>
       </div>
   
       <div style="margin: 100px; height:10px;">
-        <div class="card" id="cards">
+        <div class="card" id="cards" style="margin-top: 200px;">
             <h1 class="card-header fs-2">Item List</h1>
             <div class="container" style="padding: 30px;">
                 <div class="row" id="cart-items">
@@ -53,7 +52,7 @@
             </div>  
         </div>
       </div>
-    <div class="card" id="order-summary">
+    <div class="card" id="order-summary" style="margin-bottom: -80px;">
       <h1 class="card-header fs-2">Order Summary</h1>
       <div class="order"> 
         <p>Products(<span class="sp0" id="productCount">0</span>)<span class="sp1" id="productPrice">$0</span></p>
@@ -63,7 +62,6 @@
       </div> 
     </div> 
 
-    
     <div class="footer p-5 col-5 mx-auto text-center">
       <p>Made with <i class="fa-solid fa-heart"></i> by <span>Rashmi</span></p>
     </div>
@@ -88,39 +86,41 @@
 
             cartContainer.innerHTML = '';
             emptyMessageContainer.innerHTML = '';
-
             if (cart.length === 0) {
-                emptyMessageContainer.innerHTML = `
-                
+                emptyMessageContainer.innerHTML = `        
                     <h1 class="text-center fs-4"style="font-weight:lighter;font-size:larger">Your Cart is Empty</h1><br>
-                    <div class="text-center">
-                        <button  onclick="window.location.href='product.html'"><i class="fa fa-arrow-left" aria-hidden="true"></i>Continue Shopping</button>
+                    <div class="cart text-center">
+                        <button  onclick="window.location.href='product.html'"style="border-radius:5px;padding:5px"><i class="fa fa-arrow-left"></i>Continue Shopping</button>
                     </div>`;
                 itemListCard.style.display = 'none';
                 orderSummaryCard.style.display = 'none';
                 cartTitle.style.display = 'block';
-                cartBackground.style.backgroundColor = 'gray';
+                cartBackground.style.backgroundColor = 'whitesmoke';
                 return;
             }
 
             itemListCard.style.display = 'block';
             orderSummaryCard.style.display = 'block';
-            cartTitle.style.display = 'none';
             cartBackground.style.backgroundColor = 'transparent';
 
             cart.forEach(product => {
                 const productCard = `
-                    <div class="d-flex justify-content-between align-items-center border-bottom py-2">
-                        <img src="${product.image}" alt="${product.title}" style="width:100px;height:90px">
-                        <div class="ms-3 flex-grow-1 d-flex justify-content-between">
-                            <p class="mb-0 fw-bold">${product.title}</p>
-                            <div class="item">
-                                <button class="btn btn-sm btn-outline-secondary me-2" onclick="changeQuantity(${product.id}, -1)">-</button>
-                                <span>${product.quantity}</span>
-                                <button class="btn btn-sm btn-outline-secondary ms-2" onclick="changeQuantity(${product.id}, 1)">+</button>
+                    <div class="row justify-content-between align-items-center border-bottom py-2">
+                      <div class="col-2">  
+                        <img src="${product.image}" alt="${product.title}" class="img-fluid" style="width:100px;height:90px">
+                      </div>  
+                      <div class="col-4 ms-5 flex-grow-1 d-flex justify-content-between">
+                        <p class="mb-0 fw-bold">${product.title}</p>
+                      </div>
+                      <div class="col-3">
+                             <div class="item d-flex">
+                                <button class="btn btn-sm fs-5 fw-bold me-2" onclick="changeQuantity(${product.id}, -1)">-</button>
+                                <span class="ms-5">${product.quantity}</span>
+                                <button class="btn btn-sm fs-5 fw-bold ms-5" onclick="changeQuantity(${product.id}, 1)">+</button>
                             </div>
+                            <p class="fw-bold" style="margin-left:90px;">${Math.floor(product.quantity)}x$${product.price}</p>
                         </div>
-                    </div>`;
+                          </div>`;
                 cartContainer.innerHTML += productCard;
             });
             calculateTotal();
@@ -142,11 +142,11 @@
         function calculateTotal() {
             const shipping=30
             
-            const total = cart.reduce((sum, product) => sum + (product.price * product.quantity), 0);
+            const total = cart.reduce((sum, product) => sum + (Math.floor(product.price) * product.quantity), 0);
             document.getElementById('productCount').textContent = cart.length;
-            document.getElementById('productPrice').textContent = `$${total.toFixed(2)}`;
-            document.getElementById('shipping').textContent = `$${shipping.toFixed(2)}`;
-            document.getElementById('totalAmount').textContent = `$${(total + shipping).toFixed(2)}`; 
+            document.getElementById('productPrice').textContent = `$${total}`;
+            document.getElementById('shipping').textContent = `$${shipping}`;
+            document.getElementById('totalAmount').textContent = `$${(total + shipping)}`; 
         }
 
         if (productId) {

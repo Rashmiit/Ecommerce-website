@@ -70,7 +70,6 @@
         const params = new URLSearchParams(window.location.search);
         const productId = params.get('id');
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
-        
         function cartCount() {
             const cartCount = cart.reduce((total, product) => total + product.quantity, 0);
             document.getElementById('cartBtn').textContent = `Cart (${cartCount})`;

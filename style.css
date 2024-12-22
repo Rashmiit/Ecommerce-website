@@ -16,7 +16,7 @@ body{
     position: relative;
     text-align: center;
     height:750px;
-    background-image: url('D:/frontend/Ecommerce website/img/main.png.jpg');
+    background-image: url('https://github.com/Rashmiit/Ecommerce-website/blob/main/img/main.png.jpg?raw=true');
     background-size: cover;
     background-position: center;
     display: flex;
